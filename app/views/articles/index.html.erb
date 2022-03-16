@@ -15,9 +15,12 @@
       <tr>
         <td><strong><%= article.title %></strong></td>
         <td><%= article.description %></td>
-        <td><%= link_to "Voir l'article", article_path(article) %></td>
+        <td><%= link_to "Voir", article_path(article) %></td>
+        <td><%= link_to "Editer", edit_article_path(article) %></td>
+        <td><%= link_to "Supprimer", article_path(article), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
+  <%= link_to "Nouveau", new_article_path %>
 </div>

@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params.require(:article).permit(:title,:description))
     if @article.save
-      flash[:notice] = "L'article a été créé avec succées!"
+      flash[:notice] = "L'article a été créé avec succés!"
       redirect_to @article
     else
       render "new"
@@ -33,5 +33,11 @@ class ArticlesController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 end
