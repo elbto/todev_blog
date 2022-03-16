@@ -1,0 +1,10 @@
+<h1>Articles</h1>
+
+    <% @articles.each do |article| %>
+    <div class="article d-flex">
+      <p class="mx-2 fw-bold""><%= article.title %></p>
+      <p class="mx-2"><%= article.description %></p>
+      <p class="mx-2">Crée le : <%= article.created_at %></p>
+      <%= link_to "Voir l'article", article_path(article) %>
+    </div>
+    <% end %>
