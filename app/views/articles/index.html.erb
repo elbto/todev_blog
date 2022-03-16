@@ -7,7 +7,7 @@
       <tr>
         <th class="text-center">Title</th>
         <th class="text-center">Description</th>
-        <th class="text-center">Actions</th>
+        <th class="text-center" colspan="3">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -17,10 +17,12 @@
         <td><%= article.description %></td>
         <td><%= link_to "Voir", article_path(article) %></td>
         <td><%= link_to "Editer", edit_article_path(article) %></td>
-        <td><%= link_to "Supprimer", article_path(article), method: :delete %></td>
+        <td><%= link_to "Supprimer", article_path(article), method: :delete, data: {confirm: "Etes vous certain de vouloir supprimer cet article?"} %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  <%= link_to "Nouveau", new_article_path %>
+  <p class="mt-2">
+    <%= link_to "Nouveau", new_article_path %>
+  </p>
 </div>

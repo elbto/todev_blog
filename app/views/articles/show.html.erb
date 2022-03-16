@@ -1,8 +1,12 @@
-<h1>Article</h1>
+<section class="container">
+  <h1 class="text-center">Article</h1>
 
-<div class="article">
-  <h2><%= @article.title %></h2>
-  <p><%= @article.created_at %></p>
-  <p><%= @article.description %></p>
-</div>
-<%= link_to "Editer", edit_article_path(@article) %>
+  <div class="article">
+    <h2><%= @article.title %></h2>
+    <p><%= @article.created_at %></p>
+    <p><%= @article.description %></p>
+  </div>
+  <%= link_to "Editer", edit_article_path(@article) %> |
+  <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Etes vous certain de vouloir supprimer cet article?"} %> |
+  <%= link_to "retourner à la liste", articles_path %>
+</section>
